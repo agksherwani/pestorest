@@ -1,0 +1,51 @@
+@font-face{font-family:'Font Awesome 6 Free';font-style:normal;font-weight:900;font-display:optional;src:url(/assets/fonts/fa-solid-900.woff2) format('woff2')}
+@font-face{font-family:'Font Awesome 6 Brands';font-style:normal;font-weight:400;font-display:optional;src:url(/assets/fonts/fa-brands-400.woff2) format('woff2')}
+.fa,.fas,.fab{-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;display:inline-block;font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}
+.fas,.fa{font-family:'Font Awesome 6 Free';font-weight:900}
+.fab{font-family:'Font Awesome 6 Brands';font-weight:400}
+.fa-phone::before{content:"\f095"}
+.fa-search::before,.fa-magnifying-glass::before{content:"\f002"}
+.fa-star::before{content:"\f005"}
+.fa-home::before,.fa-house::before{content:"\f015"}
+.fa-clock::before{content:"\f017"}
+.fa-truck::before{content:"\f0d1"}
+.fa-certificate::before{content:"\f0a3"}
+.fa-award::before{content:"\f559"}
+.fa-leaf::before{content:"\f06c"}
+.fa-check-circle::before,.fa-circle-check::before{content:"\f058"}
+.fa-shield-alt::before,.fa-shield-halved::before{content:"\f3ed"}
+.fa-check::before{content:"\f00c"}
+.fa-calendar-check::before{content:"\f274"}
+.fa-moon::before{content:"\f186"}
+.fa-sun::before{content:"\f185"}
+.fa-bars::before{content:"\f0c9"}
+.fa-bolt::before,.fa-bolt-lightning::before{content:"\f0e7"}
+.fa-facebook-f::before{content:"\f39e"}
+.fa-instagram::before{content:"\f16d"}
+.fa-google::before{content:"\f1a0"}
+.fa-map-marker-alt::before,.fa-location-dot::before{content:"\f3c5"}
+.fa-paw::before{content:"\f1b0"}
+.fa-info-circle::before,.fa-circle-info::before{content:"\f05a"}
+.fa-exclamation-triangle::before,.fa-triangle-exclamation::before{content:"\f071"}
+.fa-building::before{content:"\f1ad"}
+.fa-tint::before,.fa-droplet::before{content:"\f043"}
+.fa-list::before{content:"\f03a"}
+.fa-file-alt::before,.fa-file-lines::before{content:"\f15c"}
+.fa-envelope::before{content:"\f0e0"}
+.fa-user-secret::before{content:"\f21b"}
+.fa-hard-hat::before,.fa-helmet-safety::before{content:"\f807"}
+.fa-fire::before{content:"\f06d"}
+.fa-clipboard-check::before{content:"\f46c"}
+.fa-calendar-alt::before,.fa-calendar-days::before{content:"\f073"}
+.fa-bullseye::before{content:"\f140"}
+.fa-bug::before{content:"\f188"}
+.fa-users::before{content:"\f0c0"}
+.fa-tshirt::before,.fa-shirt::before{content:"\f553"}
+.fa-sync-alt::before,.fa-arrows-rotate::before{content:"\f021"}
+.fa-redo::before,.fa-arrow-rotate-right::before{content:"\f01e"}
+.fa-paper-plane::before{content:"\f1d8"}
+.fa-map-marked-alt::before,.fa-map-location-dot::before{content:"\f5a0"}
+.fa-heart::before{content:"\f004"}
+.fa-handshake::before{content:"\f2b5"}
+.fa-door-closed::before{content:"\f52a"}
+.fa-calendar::before{content:"\f133"}
