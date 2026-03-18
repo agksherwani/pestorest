@@ -1,0 +1,54 @@
+name: SEO Audit Bot
+
+on:
+  schedule:
+    - cron: '0 */4 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    env:
+      DOMAIN: https://pestorest.ca
+      REPO_OWNER: agksherwani
+      REPO_NAME: PestoRest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.SEO_BOT_PAT }}
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: seo-bot/package-lock.json
+
+      - name: Install seo-bot dependencies
+        working-directory: seo-bot
+        run: npm ci
+
+      - name: Run SEO audit
+        env:
+          GITHUB_TOKEN: ${{ secrets.SEO_BOT_PAT }}
+          PSI_API_KEY: ${{ secrets.PSI_API_KEY }}
+        run: node seo-bot/index.mjs
+
+      - name: Summary
+        if: always()
+        run: |
+          if [ -f seo-bot/.last-run.json ]; then
+            echo "### SEO Audit Results" >> $GITHUB_STEP_SUMMARY
+            cat seo-bot/.last-run.json | node -e "
+              const d=require('fs').readFileSync('/dev/stdin','utf8');
+              const r=JSON.parse(d);
+              console.log('- Issues found: '+r.totalIssues);
+              console.log('- Auto-fixed: '+r.fixedCount);
+              console.log('- PR: '+(r.prUrl||'No changes'));
+            " >> $GITHUB_STEP_SUMMARY
+          fi
